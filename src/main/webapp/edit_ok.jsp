@@ -3,17 +3,26 @@
   User: chick
   Date: 25. 11. 14.
   Time: 오전 10:25
-  To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html; charset=UTF-8" %>
 
-<html><body>
+<%
+    // 🔥 POST 한글 깨짐 방지 필수 코드
+    request.setCharacterEncoding("UTF-8");
+%>
+
+<html>
+<body>
 <h2>수정 완료</h2>
 
-글번호: <%=request.getParameter("id")%><br>
-제목: <%=request.getParameter("title")%><br>
-작성자: <%=request.getParameter("writer")%><br>
-내용: <%=request.getParameter("content")%><br><br>
+글번호: <%= request.getParameter("id") %><br>
+제목: <%= request.getParameter("title") %><br>
+작성자: <%= request.getParameter("writer") %><br>
+내용: <%= request.getParameter("content") %><br><br>
 
-<a href="form.jsp">목록으로</a>
-</body></html>
+<!-- 🔥 흐름에 맞게 list.jsp로 돌아가도록 수정 -->
+<a href="list.jsp">목록으로</a>
+
+</body>
+</html>
