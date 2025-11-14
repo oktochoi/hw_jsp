@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+
+<h2>글 수정</h2>
+
+<form action="edit_ok.jsp" method="post">
+
+    <input type="hidden" name="id" value="${param.id}">
+
+    제목: <input type="text" name="title" value="${param.title}"><br><br>
+    작성자: <input type="text" name="writer" value="${param.writer}"><br><br>
+
+    내용:<br>
+    <textarea name="content" rows="5" cols="40">${param.content}</textarea><br><br>
+
+    <button type="submit">저장</button>
+</form>
+
+</body>
+</html>
