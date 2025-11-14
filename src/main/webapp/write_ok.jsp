@@ -15,5 +15,5 @@
 카테고리: <%=request.getParameter("category")%><br>
 내용: <%=request.getParameter("content")%><br><br>
 
-<a href="list.jsp">목록으로</a>
+<a href="form.jsp">목록으로</a>
 </body></html>

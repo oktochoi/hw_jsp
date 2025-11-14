@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Form 데이터 테스트</title>
+</head>
+<body>
+
+<h2>📌 Form → JSP 데이터 전달 테스트</h2>
+
+<form action="form_ok.jsp" method="post">
+
+  이름: <input type="text" name="name"><br><br>
+
+  나이: <input type="number" name="age"><br><br>
+
+  이메일: <input type="email" name="email"><br><br>
+
+  성별:
+  <input type="radio" name="gender" value="남"> 남
+  <input type="radio" name="gender" value="여"> 여
+  <br><br>
+
+  관심 분야:
+  <select name="interest">
+    <option value="개발">개발</option>
+    <option value="디자인">디자인</option>
+    <option value="기획">기획</option>
+    <option value="보안">보안</option>
+  </select><br><br>
+
+  자기소개:<br>
+  <textarea name="intro" rows="4" cols="40"></textarea><br><br>
+
+  <button type="submit">제출하기</button>
+</form>
+
+</body>
+</html>

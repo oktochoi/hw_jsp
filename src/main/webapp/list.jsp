@@ -24,7 +24,7 @@
 
 <table border="1" width="500">
     <tr>
-        <th>ID</th><th>제목</th><th>작성자</th><th>보기</th>
+        <th>ID</th><th>제</th><th>작성자</th><th>보기</th>
     </tr>
 
     <%
