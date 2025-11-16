@@ -1,3 +1,13 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%
+request.setCharacterEncoding("UTF-8");
+
+// list.jsp에서 넘어온 값 받기
+String id = request.getParameter("id");
+String title = request.getParameter("title");
+String writer = request.getParameter("writer");
+String content = request.getParameter("content");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -8,13 +18,13 @@
 
 <form action="edit_ok.jsp" method="post">
 
-    <input type="hidden" name="id" value="${param.id}">
+    <input type="hidden" name="id" value="<%= id %>">
 
-    제목: <input type="text" name="title" value="${param.title}"><br><br>
-    작성자: <input type="text" name="writer" value="${param.writer}"><br><br>
+    제목: <input type="text" name="title" value="<%= title %>"><br><br>
+    작성자: <input type="text" name="writer" value="<%= writer %>"><br><br>
 
     내용:<br>
-    <textarea name="content" rows="5" cols="40">${param.content}</textarea><br><br>
+    <textarea name="content" rows="5" cols="40"><%= content %></textarea><br><br>
 
     <button type="submit">저장</button>
 </form>
