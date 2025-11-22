@@ -1,47 +1,43 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chick
-  Date: 25. 11. 14.
-  Time: 오전 10:24
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="dao.BoardDAO, model.BoardVO, java.util.List" %>
+
 <%
-    // Mock Data (DB 대신)
-    String[][] mock = {
-            {"1", "첫 번째 글입니다", "관리자", "내용1"},
-            {"2", "두 번째 글입니다", "홍길동", "내용2"},
-            {"3", "세 번째 글입니다", "김철수", "내용3"}
-    };
+    BoardDAO dao = new BoardDAO();
+    List<BoardVO> list = dao.getList();
 %>
 
 <html>
-<body>
-<h2>게시판 목록</h2>
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 목록</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-<a href="write.html">새글작성</a>
-<br><br>
+<body class="container mt-5">
 
-<table border="1" width="500">
+<h2 class="mb-4">게시판 목록</h2>
+<a class="btn btn-primary mb-3" href="write.jsp">새 글 작성</a>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
     <tr>
-        <th>ID</th><th>제</th><th>작성자</th><th>보기</th>
+        <th>ID</th><th>제목</th><th>작성자</th><th>날짜</th><th>삭제</th>
     </tr>
+    </thead>
 
-    <%
-        for(int i=0;i<mock.length;i++){
-    %>
+    <tbody>
+    <% for(BoardVO vo : list) { %>
     <tr>
-        <td><%=mock[i][0]%></td>
-        <td><%=mock[i][1]%></td>
-        <td><%=mock[i][2]%></td>
+        <td><%= vo.getId() %></td>
+        <td><%= vo.getTitle() %></td>
+        <td><%= vo.getWriter() %></td>
+        <td><%= vo.getRegdate() %></td>
         <td>
-            <a href="view.jsp?id=<%=mock[i][0]%>&title=<%=mock[i][1]%>&writer=<%=mock[i][2]%>&content=<%=mock[i][3]%>">
-                상세보기</a>
+            <a href="delete_ok.jsp?id=<%= vo.getId() %>" class="btn btn-danger btn-sm">삭제</a>
         </td>
     </tr>
-    <%
-        }
-    %>
+    <% } %>
+    </tbody>
 </table>
 
 </body>

@@ -24,7 +24,7 @@
                     <a class="nav-link" href="list.jsp">게시판</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="write.html">새 글 작성</a>
+                    <a class="nav-link" href="write.jsp">새 글 작성</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="form.html">Form 테스트</a>
@@ -73,7 +73,7 @@
                     <p class="card-text">
                         HTML Form과 JSP 연결을 보여주는 글 작성 페이지입니다.
                     </p>
-                    <a href="write.html" class="btn btn-outline-success">작성하기</a>
+                    <a href="write.jsp" class="btn btn-outline-success">작성하기</a>
                 </div>
             </div>
         </div>

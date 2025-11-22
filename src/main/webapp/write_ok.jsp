@@ -1,29 +1,21 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chick
-  Date: 25. 11. 14.
-  Time: 오전 10:25
---%>
-
+<%@ page import="dao.BoardDAO, model.BoardVO" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <%
-    // 🔥 POST 한글 깨짐 방지 필수 코드
     request.setCharacterEncoding("UTF-8");
+
+    BoardVO vo = new BoardVO();
+    vo.setTitle(request.getParameter("title"));
+    vo.setWriter(request.getParameter("writer"));
+    vo.setEmail(request.getParameter("email"));
+    vo.setCategory(request.getParameter("category"));
+    vo.setContent(request.getParameter("content"));
+
+    BoardDAO dao = new BoardDAO();
+    dao.insert(vo);
 %>
 
-<html>
-<body>
-<h2>글 저장 완료</h2>
-
-제목: <%= request.getParameter("title") %><br>
-작성자: <%= request.getParameter("writer") %><br>
-이메일: <%= request.getParameter("email") %><br>
-카테고리: <%= request.getParameter("category") %><br>
-내용: <%= request.getParameter("content") %><br><br>
-
-<!-- 🔥 이동 경로 수정: 게시판 목록으로 -->
-<a href="list.jsp">목록으로</a>
-
-</body>
-</html>
+<script>
+    alert("글이 저장되었습니다!");
+    location.href="list.jsp";
+</script>
