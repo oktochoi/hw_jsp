@@ -1,7 +1,7 @@
 FROM tomcat:9.0-jdk17
 
 # WAR 파일이 있으면 우선 사용, 없으면 JSP 파일 직접 복사
-COPY target/W25_22400742_1.war /usr/local/tomcat/webapps/ROOT.war
+COPY ./target/hw4-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 # 또는 JSP 파일 직접 복사 (WAR 파일이 없을 경우 주석 해제)
 # COPY ./src/main/webapp/ /usr/local/tomcat/webapps/ROOT/
 
