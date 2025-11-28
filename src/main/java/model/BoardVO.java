@@ -8,6 +8,9 @@ public class BoardVO {
     private String category;
     private String content;
     private String regdate;
+    private String filename;
+    private String filepath;
+    private int viewcount;
 
     // ---- Getters & Setters ----
     public int getId() { return id; }
@@ -30,4 +33,13 @@ public class BoardVO {
 
     public String getRegdate() { return regdate; }
     public void setRegdate(String regdate) { this.regdate = regdate; }
+
+    public String getFilename() { return filename; }
+    public void setFilename(String filename) { this.filename = filename; }
+
+    public String getFilepath() { return filepath; }
+    public void setFilepath(String filepath) { this.filepath = filepath; }
+
+    public int getViewcount() { return viewcount; }
+    public void setViewcount(int viewcount) { this.viewcount = viewcount; }
 }
